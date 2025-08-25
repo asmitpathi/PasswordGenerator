@@ -32,7 +32,7 @@ function App() {
   }, [length, numberAllowed, charAllowed, generatePassword])
 
   const copyPasswordToClipboard=useCallback(()=>{
-    passwordRef.current?.select();
+    passwordRef.current?.select();  //The ?. means only call this if passwordRef.current is not null/undefined
     passwordRef.current?.setSelectionRange(0,51);
     window.navigator.clipboard.writeText(password)
   }, [password])
